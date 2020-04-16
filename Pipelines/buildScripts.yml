@@ -1,0 +1,23 @@
+# Scripts build pipeline
+# Copies script files to the agent and publishes an artifact with them
+
+trigger:
+ paths:
+   include:
+     - Scripts/*
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: CopyFiles@2
+  displayName: 'Copy Scripts'
+  inputs:
+    SourceFolder: Scripts
+    TargetFolder: '$(build.artifactstagingdirectory)'
+
+- task: PublishPipelineArtifact@1
+  displayName: 'Publish Pipeline Artifact'
+  inputs:
+    targetPath: Scripts
+    artifact: Scripts
