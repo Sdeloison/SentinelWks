@@ -1,6 +1,3 @@
-echo "# SentinelWks" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git remote add origin https://github.com/Sdeloison/SentinelWks.git
-git push -u origin maste
+# Analytics Rules definition file
+
+The JSON file in this folder contains all the alert rules that need to be deployed to the Sentinel environment. 
